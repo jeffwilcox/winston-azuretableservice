@@ -67,6 +67,10 @@ Inspired during a port of some AWS projects to Azure where I had been using `win
 
 Also consider checking out the much cooler-named project [winston-skywriter][0] also which is built on top of the same `azure` npm module but also [bluesky][1] - an interop layer.
 
+#### Changelog
+
+0.0.0: Initial prototype that I'm using in production. Still some TODOs to address. Not yet in `npm`
+
 [0]: https://github.com/pofallon/winston-skywriter/
 [1]: https://github.com/pofallon/node-bluesky
 [2]: http://msdn.microsoft.com/en-us/library/dd179463.aspx
