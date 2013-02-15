@@ -30,9 +30,10 @@ A default (and yes a little too lengthy) method of `timestamp-uuid` is used. To 
 
 Other supported `rowKey` values:
 
-* uuid
-* epoch
-* timestamp
+* __uuid__
+* __epoch__
+* __timestamp__
+* __timestamp-uuid__
 * supply your own function
 
 ### Let's talk about partition keys
@@ -54,6 +55,7 @@ When initializing `winston.transports.AzureTableService`, consider these options
 * __columns:__ `true` by default, any metadata logged with winston will be stored in unique column names. False will store a JSON string with the metadata in a column named `meta`
 * __partition:__ `logs` by default, a function or string name. This can support but not scale a large amount of data. A better partition implementation would be to select and store in date buckets or year+date buckets, useful for high availability sites where querying may not be in real-time but over time a large amount of data will be stored. The `winston-azuretableservice` module exports a function `DatePartitionKeyFunction` (TBD: not yet implemented) that provides this functionality.
 * __rowKey:__ `timestamp-uuid` by default, a function or string value to select the kind of RowKey selection method used. See the Row keys section above.
+* __silent:__ Turns off logging when set to `true`
 
 Note that the behavior of the logger to create the table by default is different than that of `winston-skywriter`; that default combined with my interest in just building on top of the vanilla `azure` npm module were my goals for this project.
 
