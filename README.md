@@ -59,6 +59,16 @@ When initializing `winston.transports.AzureTableService`, consider these options
 
 Note that the behavior of the logger to create the table by default is different than that of `winston-skywriter`; that default combined with my interest in just building on top of the vanilla `azure` npm module were my goals for this project.
 
+### Table entities
+
+The entities created by the table service will look similar to this:
+
+* PartitionKey
+* RowKey: Shape depends on the format selected via optional `options.rowKey` function or known type
+* __Level:__ The winston level for the log message
+* __Message:__ The message logged
+* __Meta:__ Any metadata provided with the request if `options.columns` is changed to `false`. A JSON string.
+
 #### What about the storage emulator?
 
 You can pass your own `tableService` instance to this logger but at this time the default use case is live Windows Azure, and so the storage key and account name are the supported mechanism for access - not development/emulator storage or fancy connection strings.
