@@ -1,0 +1,30 @@
+{
+  "name": "winston-azuretableservice",
+  "description": "A Winston transport for the Azure Table Service",
+  "version": "0.0.0",
+  "author": {
+    "name":"Jeff Wilcox",
+    "email":"jwgithub@outlook.com",
+    "url":"http://www.jeff.wilcox.name/"
+  },
+  "homepage": "https://github.com/jeffwilcox/winston-azuretableservice",
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jeffwilcox/winston-azuretableservice.git"
+  },
+  "keywords": ["logging", "azure", "winston", "tableservice", "windowsazure"],
+  "dependencies": {
+    "uuid-js": ">= 0.7.4",
+    "azure": ">= 0.6.0"
+  },
+  "devDependencies": {
+    "winston": ">= 0.5.6"
+  },
+  "main": "./lib/winston-azuretableservice",
+  "scripts": {
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  }
+}
