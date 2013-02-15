@@ -65,9 +65,12 @@ The entities created by the table service will look similar to this:
 
 * PartitionKey
 * RowKey: Shape depends on the format selected via optional `options.rowKey` function or known type
+* Timestamp: The read-only timestamp created by the table service at insertion time.
 * __Level:__ The winston level for the log message
 * __Message:__ The message logged
 * __Meta:__ Any metadata provided with the request if `options.columns` is changed to `false`. A JSON string.
+
+Realize that table service performance could introduce subtle race conditions when viewing the Timestamp column created by Azure. Using a RowKey type that embeds a timestamp can allow for extraction of the exact time that the winston log is called.
 
 #### What about the storage emulator?
 
